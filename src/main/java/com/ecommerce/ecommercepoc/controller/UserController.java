@@ -19,6 +19,11 @@ public class UserController {
 
 	@Autowired
 	private UserService user;
+	
+	@RequestMapping("/sample")
+	public String sample() {
+		return "Hi";
+	}
 
 	@RequestMapping("/getusers")
 	public List<User> getAllUsers() {
