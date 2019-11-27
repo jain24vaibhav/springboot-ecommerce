@@ -53,4 +53,8 @@ public class UserService {
 			return e.toString();
 		}
 	}
+	
+	public User findByEmail(String email) {
+		return user.findByEmail(email);
+	}
 }

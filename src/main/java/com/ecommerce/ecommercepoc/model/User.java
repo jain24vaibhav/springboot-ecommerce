@@ -7,6 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 import com.sun.istack.NotNull;
 
@@ -21,15 +25,19 @@ public class User {
 	private int id;
 
 	@NotNull
-	@Column(unique = true)
 	private String firstName;
 	private String lastName;
 
+	@NotNull
+	@Column(unique = true)
 	private String email;
 	private Date dob;
+
+	
 	@NotNull
 	@Column(unique = true)
 	private String mobile;
+
 	@NotNull
 	private String password;
 

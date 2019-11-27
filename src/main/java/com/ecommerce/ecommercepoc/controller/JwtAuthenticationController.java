@@ -39,11 +39,9 @@ public class JwtAuthenticationController {
 		}
 		catch(BadCredentialsException e) {
 			throw new Exception("Invalid email/password.");
-		}
-		
+		}	
 		final UserDetails userDetails = jwtUserDetailsService.loadUserByUsername(authenticationRequest.getEmail());
 		final String jwt = jwtTokenUtil.generateToken(userDetails);
 		return ResponseEntity.ok(new AuthenticationResponse(jwt)) ;
 	}
-
 }
