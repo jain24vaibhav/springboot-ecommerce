@@ -36,5 +36,4 @@ public class DepartmentController {
 	public String updateDepartment(@PathVariable int id) {
 		return department.deleteDepartment(id);
 	}
-
 }

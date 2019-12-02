@@ -18,6 +18,18 @@ public class ProductService {
 		return products.findAll();
 	}
 	
+	public List<Product> getproductsByDepartmentId(int depId){		
+		return products.getProductsByDepartmentId(depId);
+	}
+	
+	public List<Product> getproductsByDepartmentName(String depName){		
+		return products.getProductsByDepartmentName(depName);
+	}
+	
+	public List<Object> getobj(String depname) {
+		return products.getobj(depname);
+	}
+	
 	public String addProduct(Product pro) {
 		try {
 			products.save(pro);
@@ -47,5 +59,7 @@ public class ProductService {
 			return e.toString();
 		}
 	}
+
+
 	
 }

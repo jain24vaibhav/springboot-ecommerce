@@ -1,10 +1,13 @@
 package com.ecommerce.ecommercepoc.model;
 
+import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-import com.sun.istack.NotNull;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
@@ -15,6 +18,7 @@ public class Department {
 	@Id
 	@GeneratedValue
 	private int departmentId;
-	@NotNull
+	@Column(nullable = false, unique = true, length = 20)
 	private String departmentName;
+	
 }
